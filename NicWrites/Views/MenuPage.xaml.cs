@@ -18,7 +18,11 @@ namespace NicWrites.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.About, Title="About Nic" },
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Short Stories" },
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Screenplays" },
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Social Media" },
+                new HomeMenuItem {Id = MenuItemType.About, Title="Copy" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

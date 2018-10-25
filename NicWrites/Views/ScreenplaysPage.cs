@@ -11,7 +11,7 @@ namespace NicWrites.Views
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Hello ContentPage" }
+                    new Label { Text = "Screenplays" }
                 }
             };
         }
