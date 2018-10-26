@@ -10,6 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />  
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />  
+    <PackageReference Include="Xam.Forms.MarkdownView" Version="0.6.1-pre" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ShortStories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ViewModels\NineYear.md" />
+    <None Remove="NineYear.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NineYear.md" />
   </ItemGroup>
 </Project>

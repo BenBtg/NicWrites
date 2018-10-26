@@ -7,6 +7,7 @@ namespace NicWrites.Models
     public enum MenuItemType
     {
         Browse,
+        Stories,
         About
     }
     public class HomeMenuItem
