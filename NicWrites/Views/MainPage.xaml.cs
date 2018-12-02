@@ -35,6 +35,12 @@ namespace NicWrites.Views
                     case (int)MenuItemType.Stories:
                         MenuPages.Add(id, new NavigationPage(new NineYear()));
                         break;
+                    case (int)MenuItemType.ScreenPlays:
+                        MenuPages.Add(id, new NavigationPage(new ScreenplaysPage()));
+                        break;
+                    case (int)MenuItemType.SocialMedia:
+                        MenuPages.Add(id, new NavigationPage(new SocialMediaPage()));
+                        break;
                 }
             }
 

@@ -8,7 +8,10 @@ namespace NicWrites.Models
     {
         Browse,
         Stories,
-        About
+        About,
+        ScreenPlays,
+        SocialMedia,
+        Copy
     }
     public class HomeMenuItem
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using UIKit;
 
@@ -24,6 +24,13 @@ namespace NicWrites.iOS
         {
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
+            CarouselViewRenderer.Init();
+
+            Bootstrap.Begin(() =>
+            {
+                // Pending registratio nof placeform-specific dependencies
+            });
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
