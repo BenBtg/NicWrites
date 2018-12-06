@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<base:BaseContentPage  xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="NicWrites.Views.SocialMediaPage"
+             xmlns:base="clr-namespace:Microsoft.MobCAT.Forms.Pages;assembly=Microsoft.MobCAT.Forms"
              xmlns:views="clr-namespace:NicWrites.Views" 
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
+             x:TypeArguments="vm:SocialMediaViewModel"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
-        <ContentPage.BindingContext>
-            <vm:SocialMediaViewModel />
-        </ContentPage.BindingContext>
     <ContentPage.Content>
         <controls:CarouselViewControl Orientation="Horizontal" 
                                       InterPageSpacing="10" 
+                                      BackgroundColor="#453B4C"
                                       Position="{Binding CurrentPosition}"
                                       ItemsSource="{Binding SocialPosts}"
             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
     <controls:CarouselViewControl.ItemTemplate>
         <DataTemplate>
-            <views:PhotoView/><!-- where MyView is a ContentView -->
+            <views:PhotoView/>
         </DataTemplate>
     </controls:CarouselViewControl.ItemTemplate>
 </controls:CarouselViewControl>
     </ContentPage.Content>
-</ContentPage>
+</base:BaseContentPage>

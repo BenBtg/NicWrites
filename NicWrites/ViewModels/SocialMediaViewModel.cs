@@ -4,10 +4,11 @@ using Microsoft.MobCAT;
 using NicWrites.Models;
 using NicWrites.Services;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NicWrites.ViewModels
 {
-    public class SocialMediaViewModel: BaseViewModel
+    public class SocialMediaViewModel: BaseNicWritesViewModel
     { 
         public object ViewModel
         {
@@ -19,7 +20,7 @@ namespace NicWrites.ViewModels
         public int CurrentPosition
         {
             get { return _currentPosition; }
-            set { SetProperty(ref _currentPosition, value); }
+            set { RaiseAndUpdate(ref _currentPosition, value); }
         }
 
         public ObservableCollection<SocialPost> SocialPosts { get; set; }
@@ -31,16 +32,26 @@ namespace NicWrites.ViewModels
             SocialPosts = new ObservableCollection<SocialPost>();
 
             _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
-
-            GetPhotos();
         }
 
-        private async void GetPhotos()
+        public async override Task InitAsync()
         {
-            var result = await _nicWritesService.GetSocialPhotosAsync();
-            foreach (Blob blob in result.Blobs.Blob)
+            await GetPhotos();
+        }
+
+        private async Task GetPhotos()
+        {
+            try
             {
-                SocialPosts.Add(new SocialPost(blob.Url));
+                var result = await _nicWritesService.GetSocialPhotosAsync();
+                foreach (Blob blob in result.Blobs.Blob)
+                {
+                    SocialPosts.Add(new SocialPost(blob.Url));
+                }
+            }
+            catch(Exception ex)
+            {
+                Logger.Debug(ex.Message, ex);
             }
         }
 

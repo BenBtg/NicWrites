@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace NicWrites.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class AboutViewModel : BaseNicWritesViewModel
     {
         public AboutViewModel()
         {

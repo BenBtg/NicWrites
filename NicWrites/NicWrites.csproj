@@ -14,6 +14,7 @@
     <PackageReference Include="Xam.Forms.MarkdownView" Version="0.6.1-pre" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Polly" Version="6.1.2" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ShortStories\" />
@@ -29,5 +30,8 @@
   <ItemGroup>
     <Compile Remove="Views\SocialMedia.xaml.cs" />
   </ItemGroup>
-  <Import Project="..\MobCAT\MobCAT.projitems" Label="Shared" Condition="Exists('..\MobCAT\MobCAT.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\MobCAT.Forms\MobCAT.Forms.csproj" />
+    <ProjectReference Include="..\MobCAT\MobCAT.csproj" />
+  </ItemGroup>
 </Project>

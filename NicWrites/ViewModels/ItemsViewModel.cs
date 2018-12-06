@@ -10,7 +10,7 @@ using NicWrites.Views;
 
 namespace NicWrites.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ItemsViewModel : BaseNicWritesViewModel
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }

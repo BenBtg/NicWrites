@@ -31,6 +31,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\BaseNavigationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\Abstractions\INavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\BaseWatcherViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\XmlSerializer.cs" />
   </ItemGroup>
 </Project>
