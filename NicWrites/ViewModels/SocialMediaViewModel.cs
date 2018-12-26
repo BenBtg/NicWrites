@@ -5,6 +5,7 @@ using NicWrites.Models;
 using NicWrites.Services;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace NicWrites.ViewModels
 {
@@ -44,10 +45,16 @@ namespace NicWrites.ViewModels
             try
             {
                 var result = await _nicWritesService.GetSocialPhotosAsync();
+
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                   
                 foreach (Blob blob in result.Blobs.Blob)
                 {
                     SocialPosts.Add(new SocialPost(blob.Url));
                 }
+                    // Code to run on the main thread
+                });
             }
             catch(Exception ex)
             {

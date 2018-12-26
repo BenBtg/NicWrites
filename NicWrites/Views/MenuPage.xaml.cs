@@ -1,4 +1,6 @@
-﻿using NicWrites.Models;
+﻿using Microsoft.MobCAT.Forms.Pages;
+using NicWrites.Models;
+using NicWrites.ViewModels;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace NicWrites.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPage : ContentPage
+    public partial class MenuPage : BaseContentPage<MenuViewModel>
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;

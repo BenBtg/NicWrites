@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using NicWrites.Views;
+using NicWrites.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NicWrites
@@ -13,8 +14,7 @@ namespace NicWrites
         {
             InitializeComponent();
 
-
-            MainPage = new MainPage();
+            MainPage = new ScreenplaysPage(); //new MainPage() { ViewModel = new SocialMediaViewModel() };
         }
 
         protected override void OnStart()
