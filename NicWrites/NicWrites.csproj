@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\SocialMedia.xaml.cs" />
+    <Compile Remove="ViewModels\EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MobCAT.Forms\MobCAT.Forms.csproj" />

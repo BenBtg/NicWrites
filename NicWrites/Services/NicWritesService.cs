@@ -19,7 +19,12 @@ namespace NicWrites.Services
 
         public Task<EnumerationResults> GetSocialPhotosAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
         {
-           return GetAsync<EnumerationResults>($"nicwritescontainer/?comp=list", cancellationToken);
+           return GetAsync<EnumerationResults>($"social", cancellationToken);
+        }
+
+        public Task<EnumerationResults> GetScreenplaysAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetAsync<EnumerationResults>($"screenplays", cancellationToken);
         }
 
 
