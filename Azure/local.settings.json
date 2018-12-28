@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=nicwritessa;AccountKey=suqKWYChHY7J4ceneo5yeWoJyajMs6KZorC712L+7MZNhIVfmb1X2r8Kn780slpLj7SEhDzGnW2ndYXCOoWsMQ==",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "NicWritesBlobConnection": "DefaultEndpointsProtocol=https;AccountName=nicwritessa;AccountKey=suqKWYChHY7J4ceneo5yeWoJyajMs6KZorC712L+7MZNhIVfmb1X2r8Kn780slpLj7SEhDzGnW2ndYXCOoWsMQ==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_EXTENSION_VERSION": "~2",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=nicwritessa;AccountKey=suqKWYChHY7J4ceneo5yeWoJyajMs6KZorC712L+7MZNhIVfmb1X2r8Kn780slpLj7SEhDzGnW2ndYXCOoWsMQ==",
+    "WEBSITE_CONTENTSHARE": "nicwrites-content-e33a",
+    "WEBSITE_NODE_DEFAULT_VERSION": "8.11.1",
+    "WEBSITE_RUN_FROM_PACKAGE": "1"
+  }
+}
