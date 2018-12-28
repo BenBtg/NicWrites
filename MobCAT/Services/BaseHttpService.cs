@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -83,7 +83,7 @@ namespace Microsoft.MobCAT.Services
                 _client = new HttpClient();
 
             _client?.DefaultRequestHeaders.Add(AcceptHeaderKey, StreamSerializer?.MediaType ?? Serializer.MediaType);
-
+            _client?.DefaultRequestHeaders.Add("x-functions-key", $"CfDJ8AAAAAAAAAAAAAAAAAAAAABBmCFowK--Mbl7XRyS7dqaE_OOd3QDgA1SUmoxn4KYPSpHdVQQnSz7X9-y-nIfgDKZKSriz3LRR_gUO0CUPF0baN2ONoSQrORdcP2ulBOCZIeKP88fo382uThSYIftXLCVvb8H90WIHEWkdr216krxJP223QA16p5XhYMLoj4PRXF1fBQtbLNRvY6myIV3a7xOWLv3QitBq65LS-6W-iIRptboB5sn_kk3d7ibsKtu9vJFNra907O1GyclpUa9xrT7vcYWWuCsM3V5591eT6XJCcrc8TJ1fbwvwKWlCcx0iwkrEPGyAVhNzpSLggS9wcD2D8ij-6NDosXxYDCd2uJc1_sFEqtzIw_-obuxHuux5A");
             _baseApiUri = baseApiUri;
         }
 
