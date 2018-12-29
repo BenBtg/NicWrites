@@ -6,6 +6,7 @@ using NicWrites.Services;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace NicWrites.ViewModels
 {
@@ -42,11 +43,14 @@ namespace NicWrites.ViewModels
             try
             {
                 var result = await _nicWritesService.GetScreenplaysAsync();
+                var sourceText = result[1].content;
+
+                var fountainDoc = await FountainSharp.FountainDocument.ParseAsync(sourceText);
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     // Code to run on the main thread
-                    WebContent = result[1].content;
+                    WebContent = FountainSharp.HtmlFormatter.WriteHtml(fountainDoc);
                 });
             }
             catch(Exception ex)
