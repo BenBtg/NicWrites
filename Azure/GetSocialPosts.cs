@@ -18,10 +18,10 @@ namespace NicWrites
             log.LogInformation("C# HTTP trigger function processed a request.");
             var storys = await BlobHelper.GetBlobsFromContainer("social-blobs",log);
 
-            var response = JsonConvert.SerializeObject(storys);
+            //var response = JsonConvert.SerializeObject(storys);
 
-            return response != null
-                ? (ActionResult)new OkObjectResult(response)
+            return storys != null
+                ? (ActionResult)new OkObjectResult(storys)
                 : new BadRequestObjectResult("Could not find story blobs");
         }
 
@@ -35,8 +35,8 @@ namespace NicWrites
 
             var response = JsonConvert.SerializeObject(storys);
 
-            return response != null
-                ? (ActionResult)new OkObjectResult(response)
+            return storys != null
+                ? (ActionResult)new OkObjectResult(storys)
                 : new BadRequestObjectResult("Could not find story blobs");
         }
 
@@ -50,8 +50,8 @@ namespace NicWrites
 
             var response = JsonConvert.SerializeObject(blobs);
 
-            return response != null
-                ? (ActionResult)new OkObjectResult(response)
+            return blobs != null
+                ? (ActionResult)new OkObjectResult(blobs)
                 : new BadRequestObjectResult("Could not find story blobs");
         }
     }
