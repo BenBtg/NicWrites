@@ -244,7 +244,6 @@ namespace Microsoft.MobCAT.Services
         protected Task<HttpResponseMessage> SendAsync(HttpMethod requestType, string requestUri, CancellationToken cancellationToken, Action<HttpRequestMessage> modifyRequest = null, string requestContent = null)
         {
             var request = new HttpRequestMessage(requestType, new Uri($"{_baseApiUri}{requestUri}"));
-
             if (requestContent != null)
                 request.Content = new StringContent(requestContent, Encoding.UTF8, StreamSerializer?.MediaType ?? Serializer.MediaType);
 

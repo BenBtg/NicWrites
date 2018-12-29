@@ -18,9 +18,15 @@ namespace NicWrites.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+      
+
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();
+            Bootstrap.Begin(() =>
+            {
+                // Pending registratio nof placeform-specific dependencies
+            });
             LoadApplication(new App());
         }
     }

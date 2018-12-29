@@ -45,9 +45,8 @@ namespace NicWrites.ViewModels
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-
-                    WebContent = result.ToString();
                     // Code to run on the main thread
+                    WebContent = result[1].content;
                 });
             }
             catch(Exception ex)

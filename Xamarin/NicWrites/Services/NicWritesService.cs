@@ -14,7 +14,7 @@ namespace NicWrites.Services
         public NicWritesService(string apiBaseAddress, string apiKey = null, HttpMessageHandler handler = null) 
             : base(apiBaseAddress, handler)
         {
-            Serializer = new Microsoft.MobCAT.Converters.XmlSerializer();
+            Serializer = new Microsoft.MobCAT.Converters.JsonSerializer();
         }
 
         public Task<EnumerationResults> GetSocialPhotosAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
@@ -22,9 +22,9 @@ namespace NicWrites.Services
            return GetAsync<EnumerationResults>($"social", cancellationToken);
         }
 
-        public Task<EnumerationResults> GetScreenplaysAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
+        Task<List<Story>> INicWritesService.GetScreenplaysAsync(bool forceRefresh, CancellationToken cancellationToken)
         {
-            return GetAsync<EnumerationResults>($"screenplays", cancellationToken);
+            return GetAsync<List<Story>>($"screenplays", cancellationToken);
         }
 
 
