@@ -4,25 +4,100 @@
              x:Class="FountainView.FountainContentView" xmlns:fountainview="clr-namespace:FountainView">
       <ContentPage.Resources>
         <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Prime">
+                <On Platform="Android" Value="Courier Prime.ttf#Courier Prime" />
+                <On Platform="iOS" Value="Courier Prime" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBold">
+                <On Platform="Android" Value="Courier Prime Bold.ttf#Courier Prime Bold" />
+                <On Platform="iOS" Value="Courier Prime Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBoldItalic">
+                <On Platform="Android" Value="Courier Prime Bold Italic.ttf#Courier Prime Bold Italic" />
+                <On Platform="iOS" Value="Courier Prime Bold Italic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeItalic">
+                <On Platform="Android" Value="Courier Prime Italic.ttf#Courier Prime Italic" />
+                <On Platform="iOS" Value="Courier Prime Italic" />
+            </OnPlatform>
+            
+            <Color x:Key="NormalTextColor">Black</Color>
+            
+            <Style x:Key="BaseLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Prime}"/>
+                <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+            
+            <Style x:Key="CharacterLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
+            </Style>
+            
+            <Style x:Key="DialogueLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="Margin" Value="80,0,80,0"/>
+            </Style>
+            
+            <Style x:Key="MissingLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontFamily" Value="{StaticResource PrimeItalic}"/>
+            </Style>
+            
             <DataTemplate x:Key="actionTemplate">
                   <ViewCell>
-                        <Label Text="{Binding Path=Item2[0].Item1}" FontFamily="Courier New" FontSize="Large"/>
+                        <Label Text="{Binding Path=Item2[0].Item1}" Style="{StaticResource BaseLabelStyle}"/>
                     </ViewCell>
             </DataTemplate>
             <DataTemplate x:Key="characterTemplate">
                   <ViewCell>
-                        <Label Text="{Binding Path=Item3[0].Item1}" FontFamily="Courier New" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+                        <Label Text="{Binding Path=Item3[0].Item1}" Style="{StaticResource CharacterLabelStyle}"/>
+                    </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="sceneHeadingTemplate">
+                  <ViewCell>
+                        <Label Text="{Binding Path=Item2[0].Item1}" Style="{StaticResource BaseLabelStyle}"/>
+                    </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="parentheticalTemplate">
+                  <ViewCell>
+                        <Label Style="{StaticResource BaseLabelStyle}">
+                            <Span Text="(" />
+                            <Span Text="Binding Path=Item2[0].Item1}" />
+                            <Span Text=")"/>
+                        </Label>
+                    </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="simpleTemplate">
+                  <ViewCell>
+                        <Label Text="{Binding Path=Item1[0].Item1}" Style="{StaticResource BaseLabelStyle}"/>
+                    </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="dialogueTemplate">
+                  <ViewCell>
+                        <Label Text="{Binding Path=Item1[0].Item1}" Style="{StaticResource DialogueLabelStyle}"/>
                     </ViewCell>
             </DataTemplate>
             <DataTemplate x:Key="defaultTemplate">
                   <ViewCell>
-                        <Label Text="{Binding Path=Item2[0].Item1}" FontFamily="Courier New" TextColor="DarkGray" FontSize="Large"/>
+                        <Label Text="{Binding Path=Item2[0].Item1}" Style="{StaticResource MissingLabelStyle}"/>
+                    </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="emptyTemplate">
+                  <ViewCell>
+                        <Label Text="EMPTY!!" Style="{StaticResource MissingLabelStyle}"/>
                     </ViewCell>
             </DataTemplate>
             <fountainview:FountainTemplateSelector x:Key="FountainDataTemplateSelector"
                 ActionTemplate="{StaticResource actionTemplate}"
                 CharacterTemplate="{StaticResource characterTemplate}" 
-                DefaultTemplate="{StaticResource defaultTemplate}"/>
+                ParentheticalTemplate="{StaticResource dialogueTemplate}"
+                DialogueTemplate="{StaticResource dialogueTemplate}"
+                SceneHeadingTemplate="{StaticResource sceneHeadingTemplate}"                                
+                DefaultTemplate="{StaticResource defaultTemplate}"
+                EmptyTemplate="{StaticResource emptyTemplate}"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     

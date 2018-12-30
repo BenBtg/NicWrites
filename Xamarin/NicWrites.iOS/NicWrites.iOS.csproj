@@ -93,6 +93,10 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\iPadPro10.5.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\iPhoneX.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\iPhoneXSMax.png" />
+    <BundleResource Include="Resources\Courier Prime.ttf" />
+    <BundleResource Include="Resources\Courier Prime Bold.ttf" />
+    <BundleResource Include="Resources\Courier Prime Bold Italic.ttf" />
+    <BundleResource Include="Resources\Courier Prime Italic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

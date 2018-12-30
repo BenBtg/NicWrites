@@ -34,5 +34,12 @@
 	<string>NicWrites</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Courier Prime.ttf</string>
+		<string>Courier Prime Bold.ttf</string>
+		<string>Courier Prime Bold Italic.ttf</string>
+		<string>Courier Prime Italic.tt</string>
+	</array>
 </dict>
 </plist>
