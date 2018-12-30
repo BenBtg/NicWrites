@@ -11,7 +11,7 @@
             </DataTemplate>
             <DataTemplate x:Key="characterTemplate">
                   <ViewCell>
-                        <Label Text="{Binding Path=Item2[0].Item1}" FontFamily="Courier New" FontAttributes="Bold" FontSize="Large"/>
+                        <Label Text="{Binding Path=Item3[0].Item1}" FontFamily="Courier New" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
                     </ViewCell>
             </DataTemplate>
             <DataTemplate x:Key="defaultTemplate">
