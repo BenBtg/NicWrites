@@ -37,5 +37,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MobCAT.Forms\MobCAT.Forms.csproj" />
     <ProjectReference Include="..\MobCAT\MobCAT.csproj" />
+    <ProjectReference Include="..\FountainContentView\FountainView.csproj" />
   </ItemGroup>
 </Project>

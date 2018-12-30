@@ -36,7 +36,7 @@ namespace NicWrites.Views
                         MenuPages.Add(id, new NavigationPage(new NineYear()));
                         break;
                     case (int)MenuItemType.ScreenPlays:
-                        MenuPages.Add(id, new NavigationPage(new ScreenplaysPage()));
+                        MenuPages.Add(id, new NavigationPage(new ScriptContentPage()));
                         break;
                     case (int)MenuItemType.SocialMedia:
                         MenuPages.Add(id, new NavigationPage(new SocialMediaPage()));

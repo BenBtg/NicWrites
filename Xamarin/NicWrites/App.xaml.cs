@@ -14,7 +14,7 @@ namespace NicWrites
         {
             InitializeComponent();
 
-            MainPage = new ScreenplaysPage() { ViewModel = new ScreenplaysViewModel() }; //new MainPage() { ViewModel = new SocialMediaViewModel() };
+            MainPage = new ScriptContentPage() { ViewModel = new ViewModels.ScriptContentViewModel() }; //new MainPage() { ViewModel = new SocialMediaViewModel() };
         }
 
         protected override void OnStart()

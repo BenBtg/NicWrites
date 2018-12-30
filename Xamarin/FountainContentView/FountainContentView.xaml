@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FountainView.FountainContentView">
+    <ContentView.Content>
+        <ListView x:Name="FountainList" SeparatorVisibility="None" HasUnevenRows="true">
+            <ListView.Header>
+               <!-- <Label Text="Fountain View"/>-->
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Path=Item2[0].Item1}" FontFamily="Courier New" FontSize="Large"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+    </ContentView.Content>
+</ContentView>

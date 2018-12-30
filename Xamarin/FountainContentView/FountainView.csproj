@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FountainSharp" Version="1.0.0-pre30" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="FSharp.Core" Version="4.5.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BlockTemplateSelector.cs" />
+  </ItemGroup>
+</Project>

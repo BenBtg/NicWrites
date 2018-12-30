@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace NicWrites.ViewModels
 {
-    public class ScreenplaysViewModel: BaseNicWritesViewModel
+    public class ScriptContentViewModel: BaseNicWritesViewModel
     { 
         public object ViewModel
         {
@@ -28,36 +28,29 @@ namespace NicWrites.ViewModels
 
         string _webContent;
 
-        public ScreenplaysViewModel()
+        public ScriptContentViewModel()
         {
             _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
         }
 
         public async override Task InitAsync()
         {
-            await GetPhotos();
-        }
-
-        private async Task GetPhotos()
-        {
             try
             {
                 var result = await _nicWritesService.GetScreenplaysAsync();
                 var sourceText = result[1].content;
 
-                var fountainDoc = await FountainSharp.FountainDocument.ParseAsync(sourceText);
-
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     // Code to run on the main thread
-                    WebContent = FountainSharp.HtmlFormatter.WriteHtml(fountainDoc);
+                    WebContent = sourceText;
+                    ;
                 });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Logger.Debug(ex.Message, ex);
             }
         }
-
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobCAT.Forms", "MobCAT.Form
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobCAT", "MobCAT\MobCAT.csproj", "{22C593E2-3061-4183-8B64-8A3DB9669701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FountainView", "FountainContentView\FountainView.csproj", "{23773DA7-3041-4085-A0E4-FBDC8A5CE980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,18 @@ Global
 		{22C593E2-3061-4183-8B64-8A3DB9669701}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{22C593E2-3061-4183-8B64-8A3DB9669701}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{22C593E2-3061-4183-8B64-8A3DB9669701}.Release|iPhone.Build.0 = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{23773DA7-3041-4085-A0E4-FBDC8A5CE980}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

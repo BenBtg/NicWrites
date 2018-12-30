@@ -110,6 +110,10 @@
       <Project>{95996241-54B2-4C73-A46A-C877BFB73BE6}</Project>
       <Name>NicWrites</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FountainContentView\FountainView.csproj">
+      <Project>{23773DA7-3041-4085-A0E4-FBDC8A5CE980}</Project>
+      <Name>FountainView</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\LaunchImage.imageset\" />
