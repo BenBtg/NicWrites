@@ -20,21 +20,15 @@ namespace FountainView
             if (item.ToString().Contains("[]")) 
                 return EmptyTemplate;
 
-            Console.WriteLine(item);
-            Console.WriteLine(item.GetType().Name);   
+           // Console.WriteLine(item);
+           // Console.WriteLine(item.GetType().Name);   
             if (item is FountainBlockElement.Action) return ActionTemplate;
             if (item is FountainBlockElement.Character) return CharacterTemplate;
-            if (item is FountainBlockElement.Dialogue)
-            {
-                string test = ((FountainBlockElement.Dialogue)item).ToString();
-
-                    Console.WriteLine(((FountainSharp.FountainBlockElement.Dialogue)item).ToString());
-                return this.DialogueTemplate;
-            }
+            if (item is FountainBlockElement.Dialogue) return this.DialogueTemplate;
             if (item is FountainBlockElement.SceneHeading) return SceneHeadingTemplate;
             if (item is FountainBlockElement.Parenthetical) return ParentheticalTemplate;
 
-            Console.WriteLine(item.GetType().Name);
+           // Console.WriteLine(item.GetType().Name);
             return DefaultTemplate;
         }
     }
