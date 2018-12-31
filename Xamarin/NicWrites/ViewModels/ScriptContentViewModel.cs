@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Microsoft.AppCenter.Analytics;
 
 namespace NicWrites.ViewModels
 {
@@ -35,10 +36,13 @@ namespace NicWrites.ViewModels
 
         public async override Task InitAsync()
         {
+
             try
             {
                 var result = await _nicWritesService.GetScreenplaysAsync();
                 var sourceText = result[1].content;
+
+                Analytics.TrackEvent("ViewScript " + result[1].title);
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {

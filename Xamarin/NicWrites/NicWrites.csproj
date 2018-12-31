@@ -11,13 +11,12 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />  
-    <PackageReference Include="Xam.Forms.MarkdownView" Version="0.6.1-pre" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Polly" Version="6.1.2" />
     <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638" />
-    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="9.4.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
-    <PackageReference Include="FountainSharp" Version="1.0.0-pre30" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.12.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.12.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ShortStories\" />
