@@ -10,7 +10,7 @@
     <base:BaseContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="{StaticResource Prime}"/>
+                <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="Margin" Value="30"/>
