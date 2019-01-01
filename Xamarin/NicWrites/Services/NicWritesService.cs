@@ -17,14 +17,14 @@ namespace NicWrites.Services
             Serializer = new Microsoft.MobCAT.Converters.JsonSerializer();
         }
 
-        public Task<EnumerationResults> GetSocialPhotosAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
-        {
-           return GetAsync<EnumerationResults>($"social", cancellationToken);
-        }
-
         Task<List<Story>> INicWritesService.GetScreenplaysAsync(bool forceRefresh, CancellationToken cancellationToken)
         {
             return GetAsync<List<Story>>($"screenplays", cancellationToken);
+        }
+
+        Task<List<Story>> INicWritesService.GetSocialPhotosAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Story>>($"social", cancellationToken);
         }
 
 

@@ -8,7 +8,7 @@ namespace NicWrites.Services
 {
     public interface INicWritesService
     {
-        Task<EnumerationResults> GetSocialPhotosAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken));
+        Task<List<Story>> GetSocialPhotosAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken));
         Task<List<Story>> GetScreenplaysAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

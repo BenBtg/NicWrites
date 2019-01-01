@@ -23,16 +23,17 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="Margin" Value="30"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
           </ResourceDictionary>
     </base:BaseContentPage.Resources>        
-    <Grid> <Image Source="CoffeeStain.jpg" />    
+    <Grid> <Image Source="CoffeeStain.jpg" BackgroundColor="White"/>    
     <StackLayout>
         <Label Text="Nic Writes" Style="{StaticResource TitleStyle}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Stories" Command="{Binding ScriptCommand}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Social" />
-        <Button Style="{StaticResource MenuItemStyle}" Text="Scripts" />
-        <Button Style="{StaticResource MenuItemStyle}" Text="Articles" />
+        <Button Style="{StaticResource MenuItemStyle}" Text="Stories" Command="{Binding StoriesCommand}"/>
+        <Button Style="{StaticResource MenuItemStyle}" Text="Social" Command="{Binding SocialCommand}"/>
+        <Button Style="{StaticResource MenuItemStyle}" Text="Scripts" Command="{Binding ScriptsCommand}"/>
+        <Button Style="{StaticResource MenuItemStyle}" Text="Articles" Command="{Binding ArticlesCommand}"/>
     </StackLayout>
     </Grid>
 </base:BaseContentPage>

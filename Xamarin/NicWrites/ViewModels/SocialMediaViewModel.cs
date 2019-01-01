@@ -49,9 +49,10 @@ namespace NicWrites.ViewModels
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                    
-                foreach (Blob blob in result.Blobs.Blob)
+                foreach (var blob in result)
                 {
-                    SocialPosts.Add(new SocialPost(blob.Url));
+                    SocialPosts.Add(new SocialPost(blob.url.ToString()));
+
                 }
                     // Code to run on the main thread
                 });

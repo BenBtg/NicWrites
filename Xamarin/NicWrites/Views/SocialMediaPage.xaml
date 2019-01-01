@@ -7,10 +7,11 @@
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
              x:TypeArguments="vm:SocialMediaViewModel"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
-    <ContentPage.Content>
+
+            <Grid BackgroundColor="White"> <Image Source="CoffeeStain.jpg" />    
         <controls:CarouselViewControl Orientation="Horizontal" 
                                       InterPageSpacing="10" 
-                                      BackgroundColor="#453B4C"
+                                      BackgroundColor="White"
                                       Position="{Binding CurrentPosition}"
                                       ItemsSource="{Binding SocialPosts}"
             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -20,5 +21,5 @@
         </DataTemplate>
     </controls:CarouselViewControl.ItemTemplate>
 </controls:CarouselViewControl>
-    </ContentPage.Content>
+</Grid>
 </base:BaseContentPage>
