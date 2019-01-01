@@ -12,8 +12,9 @@
             <Style x:Key="TitleStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource Prime}"/>
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="Margin" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
             </Style>
             

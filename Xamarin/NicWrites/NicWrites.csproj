@@ -27,9 +27,6 @@
     <None Remove="ShortStories\NineYear.md" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Remove="Views\ScriptContentPage %28copy%29.xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="ShortStories\NineYear.md" />
   </ItemGroup>
   <ItemGroup>

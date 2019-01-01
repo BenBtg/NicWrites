@@ -39,6 +39,7 @@ namespace NicWrites.ViewModels
 
             try
             {
+                IsBusy = true;
                 var result = await _nicWritesService.GetScreenplaysAsync();
                 var sourceText = result[1].content;
 
@@ -50,10 +51,15 @@ namespace NicWrites.ViewModels
                     WebContent = sourceText;
                     ;
                 });
+            
             }
             catch (Exception ex)
             {
                 Logger.Debug(ex.Message, ex);
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }

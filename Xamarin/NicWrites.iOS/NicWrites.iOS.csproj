@@ -94,6 +94,9 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\iPhoneX.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.imageset\iPhoneXSMax.png" />
     <BundleResource Include="Resources\Courier Prime.ttf" />
+    <BundleResource Include="Resources\Courier Prime Bold.ttf" />
+    <BundleResource Include="Resources\Courier Prime Bold Italic.ttf" />
+    <BundleResource Include="Resources\Courier Prime Italic.ttf" />
     <BundleResource Include="Resources\coffee-stain%403x.jpg" />
     <BundleResource Include="Resources\coffee-stain%402x.jpg" />
     <BundleResource Include="Resources\coffee-stain.jpg" />
