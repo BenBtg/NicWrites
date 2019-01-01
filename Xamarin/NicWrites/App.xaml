@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NicWrites.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="NicWrites.App">
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
@@ -13,18 +15,7 @@
                 <On Platform="Android" Value="Courier Prime.ttf#Courier Prime" />
                 <On Platform="iOS" Value="Courier Prime" />
             </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBold">
-                <On Platform="Android" Value="Courier Prime Bold.ttf#Courier Prime Bold" />
-                <On Platform="iOS" Value="Courier Prime Bold" />
-            </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBoldItalic">
-                <On Platform="Android" Value="Courier Prime Bold Italic.ttf#Courier Prime Bold Italic" />
-                <On Platform="iOS" Value="Courier Prime Bold Italic" />
-            </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeItalic">
-                <On Platform="Android" Value="Courier Prime Italic.ttf#Courier Prime Italic" />
-                <On Platform="iOS" Value="Courier Prime Italic" />
-            </OnPlatform>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

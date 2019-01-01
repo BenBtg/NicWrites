@@ -89,12 +89,20 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\coffee-stain.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-ldpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NicWrites\NicWrites.csproj">
