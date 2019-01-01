@@ -26,7 +26,7 @@
             </Style>
           </ResourceDictionary>
     </base:BaseContentPage.Resources>        
-    <Grid> <Image Source="coffee-stain.jpg" />    
+    <Grid> <Image Source="CoffeeStain.jpg" />    
     <StackLayout>
         <Label Text="Nic Writes" Style="{StaticResource TitleStyle}"/>
         <Button Style="{StaticResource MenuItemStyle}" Text="Stories" Command="{Binding ScriptCommand}"/>

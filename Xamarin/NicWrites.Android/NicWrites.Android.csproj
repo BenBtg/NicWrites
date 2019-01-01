@@ -89,12 +89,12 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\coffee-stain.jpg" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\coffee-stain.jpg" />
-    <AndroidResource Include="Resources\drawable-xhdpi\coffee-stain.jpg" />
-    <AndroidResource Include="Resources\drawable-hdpi\coffee-stain.jpg" />
-    <AndroidResource Include="Resources\drawable-mdpi\coffee-stain.jpg" />
-    <AndroidResource Include="Resources\drawable-ldpi\coffee-stain.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\CoffeeStain.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\CoffeeStain.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\CoffeeStain.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\CoffeeStain.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\CoffeeStain.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\CoffeeStain.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

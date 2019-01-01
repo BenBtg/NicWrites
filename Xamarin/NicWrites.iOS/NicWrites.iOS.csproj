@@ -97,9 +97,9 @@
     <BundleResource Include="Resources\Courier Prime Bold.ttf" />
     <BundleResource Include="Resources\Courier Prime Bold Italic.ttf" />
     <BundleResource Include="Resources\Courier Prime Italic.ttf" />
-    <BundleResource Include="Resources\coffee-stain%403x.jpg" />
-    <BundleResource Include="Resources\coffee-stain%402x.jpg" />
-    <BundleResource Include="Resources\coffee-stain.jpg" />
+    <BundleResource Include="Resources\CoffeeStain%403x.jpg" />
+    <BundleResource Include="Resources\CoffeeStain%402x.jpg" />
+    <BundleResource Include="Resources\CoffeeStain.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
