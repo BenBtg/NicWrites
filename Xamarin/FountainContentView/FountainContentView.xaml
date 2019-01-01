@@ -8,18 +8,6 @@
                 <On Platform="Android" Value="Courier Prime.ttf#Courier Prime" />
                 <On Platform="iOS" Value="Courier Prime" />
             </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBold">
-                <On Platform="Android" Value="Courier Prime Bold.ttf#Courier Prime Bold" />
-                <On Platform="iOS" Value="Courier Prime Bold" />
-            </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeBoldItalic">
-                <On Platform="Android" Value="Courier Prime Bold Italic.ttf#Courier Prime Bold Italic" />
-                <On Platform="iOS" Value="Courier Prime Bold Italic" />
-            </OnPlatform>
-            <OnPlatform x:TypeArguments="x:String" x:Key="PrimeItalic">
-                <On Platform="Android" Value="Courier Prime Italic.ttf#Courier Prime Italic" />
-                <On Platform="iOS" Value="Courier Prime Italic" />
-            </OnPlatform>
             
             <Color x:Key="NormalTextColor">Black</Color>
             
@@ -31,7 +19,8 @@
             
             <Style x:Key="CharacterLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <!--//<Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>-->
             </Style>
             
             <Style x:Key="DialogueLabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
@@ -62,12 +51,19 @@
             
             <DataTemplate x:Key="parentheticalTemplate">
                   <ViewCell>
-                        <Label Style="{StaticResource BaseLabelStyle}">
-                            <Span Text="(" />
-                            <Span Text="Binding Path=Item2[0].Item1}" />
-                            <Span Text=")"/>
-                        </Label>
-                    </ViewCell>
+                    <Label HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="(" />
+                                <Span FontFamily="{StaticResource Prime}" Text="{Binding Path=Item1[0].Item1}"/>
+                                <Span Text=")" />
+                           </FormattedString>
+                        </Label.FormattedText>
+           <!--     <Label.Behaviors>
+                    <behaviors:FadeInOnPropertyChangedBehavior PropertyName="FormattedText"/>
+                </Label.Behaviors>-->
+                    </Label>
+                </ViewCell>
             </DataTemplate>
             
             <DataTemplate x:Key="simpleTemplate">
@@ -93,7 +89,7 @@
             <fountainview:FountainTemplateSelector x:Key="FountainDataTemplateSelector"
                 ActionTemplate="{StaticResource actionTemplate}"
                 CharacterTemplate="{StaticResource characterTemplate}" 
-                ParentheticalTemplate="{StaticResource dialogueTemplate}"
+                ParentheticalTemplate="{StaticResource parentheticalTemplate}"
                 DialogueTemplate="{StaticResource dialogueTemplate}"
                 SceneHeadingTemplate="{StaticResource sceneHeadingTemplate}"                                
                 DefaultTemplate="{StaticResource defaultTemplate}"
@@ -104,7 +100,8 @@
     <ContentView.Content>
         <ListView x:Name="FountainList" SeparatorVisibility="None" HasUnevenRows="true"
                   ItemTemplate="{StaticResource FountainDataTemplateSelector}"
-                  SelectionMode="None"
+                  SelectionMode="None" 
+                  CachingStrategy="RecycleElement"
                   >
             <ListView.Header>
                <!-- <Label Text="Fountain View"/>-->

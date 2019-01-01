@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using FountainSharp;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace FountainView
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FountainContentView : ContentView
     {
         //public string FountainText { get; set; }
