@@ -7,6 +7,7 @@
              xmlns:views="clr-namespace:NicWrites.Views" 
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
              x:TypeArguments="vm:MenuViewModel"
+    BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
     <base:BaseContentPage.Resources>
         <ResourceDictionary>
@@ -14,7 +15,7 @@
                 <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="Margin" Value="30,60,30,30"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
             </Style>
@@ -23,18 +24,34 @@
                 <Setter Property="FontFamily" Value="{StaticResource Prime}"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="Margin" Value="30"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
           </ResourceDictionary>
-    </base:BaseContentPage.Resources>        
-    <Grid> <Image Source="CoffeeStain.jpg" BackgroundColor="White"/>    
-    <StackLayout>
-        <Label Text="Nic Writes" Style="{StaticResource TitleStyle}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Stories" Command="{Binding StoriesCommand}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Social" Command="{Binding SocialCommand}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Scripts" Command="{Binding ScriptsCommand}"/>
-        <Button Style="{StaticResource MenuItemStyle}" Text="Articles" Command="{Binding ArticlesCommand}"/>
-    </StackLayout>
+    </base:BaseContentPage.Resources>       
+    <Grid>
+        <Image Source="CoffeeStain.jpg" Margin="60,90,0,0" BackgroundColor="White" Aspect="AspectFit"/>
+        <Grid Margin="50">     
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Label Text="Nic Writes" Style="{StaticResource TitleStyle}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="1" Text="Articles" Command="{Binding ArticlesCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="2" Text="Play Scripts" Command="{Binding PlayScriptsCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="3" Text="Promotional Copy" Command="{Binding PromoCopyCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="4" Text="Screenplays" Command="{Binding ScreenplaysCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="5" Text="Reviews" Command="{Binding ReviewsCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="6" Text="Short Stories" Command="{Binding StoriesCommand}"/>        
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="7" Text="Social" Command="{Binding SocialCommand}"/>
+        
+        </Grid>
     </Grid>
 </base:BaseContentPage>
