@@ -50,7 +50,7 @@
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="4" Text="Screenplays" Command="{Binding ScreenplaysCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="5" Text="Reviews" Command="{Binding ReviewsCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="6" Text="Short Stories" Command="{Binding StoriesCommand}"/>        
-            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="7" Text="Social" Command="{Binding SocialCommand}"/>
+            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="7" Text="Social Media" Command="{Binding SocialCommand}"/>
         
         </Grid>
     </Grid>
