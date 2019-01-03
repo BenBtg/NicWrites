@@ -7,4 +7,5 @@
              xmlns:views="clr-namespace:NicWrites.Views" 
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
              x:TypeArguments="vm:ScriptContentViewModel">
+    <Label x:Name="testLabel" FontFamily="{StaticResource Prime}"/>
 </base:BaseContentPage>  

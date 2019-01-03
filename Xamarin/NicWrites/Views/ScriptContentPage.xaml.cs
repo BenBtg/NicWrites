@@ -11,8 +11,9 @@ namespace NicWrites.Views
         public ScriptContentPage()
         {
             InitializeComponent();
-            _fountainContentView = new FountainView.FountainContentView();
-            Content = _fountainContentView;
+
+            //_fountainContentView = new FountainView.FountainContentView();
+            //Content = new Label _fountainContentView;
         }
 
         protected override void OnAppearing()
@@ -25,7 +26,8 @@ namespace NicWrites.Views
         {
             if (e.PropertyName == "WebContent")
             {
-                await _fountainContentView.SetContent(ViewModel.WebContent);
+                testLabel.Text = ViewModel.WebContent;
+              //  await _fountainContentView.SetContent(ViewModel.WebContent);
             }
         }
     }

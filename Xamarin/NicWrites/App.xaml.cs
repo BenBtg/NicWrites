@@ -14,7 +14,7 @@ namespace NicWrites
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage() { ViewModel = new MenuViewModel() });
+            MainPage = new NavigationPage(new MainPage() { ViewModel = new MenuViewModel() }) { Title = "Nic Writes", BarTextColor=Color.Black };
             //new ScriptContentPage() { ViewModel = new ViewModels.ScriptContentViewModel() }; //new MainPage() { ViewModel = new SocialMediaViewModel() };
         }
 

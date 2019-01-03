@@ -41,9 +41,9 @@ namespace NicWrites.ViewModels
             {
                 IsBusy = true;
                 var result = await _nicWritesService.GetScreenplaysAsync();
-                var sourceText = result[1].content;
+                var sourceText = result[2].content;
 
-                Analytics.TrackEvent("ViewScript " + result[1].title);
+                Analytics.TrackEvent("ViewScript " + result[2].title);
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
