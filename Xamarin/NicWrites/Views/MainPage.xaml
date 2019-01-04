@@ -11,14 +11,12 @@
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
     <base:BaseContentPage.Resources>
-        <ResourceDictionary>
-           
-            </ResourceDictionary>
+
     </base:BaseContentPage.Resources>       
     <Grid>
         <Image Source="CoffeeStain.jpg" Margin="60,90,0,0" BackgroundColor="White" Aspect="AspectFit"/>
             
-            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+           <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center"/>
            <controls:ListView ItemsSource="{Binding Categories}" 
                      ItemTemplate="{StaticResource menuItemTemplate}"
                      SeparatorVisibility="None" HasUnevenRows="true"

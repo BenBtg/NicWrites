@@ -6,15 +6,15 @@
              xmlns:views="clr-namespace:NicWrites.Views" 
              xmlns:controls="clr-namespace:NicWrites.Controls"
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
-             x:TypeArguments="vm:DocumentListViewModel">
+             x:TypeArguments="vm:DocumentListViewModel"
+                       Title="{Binding Title}">
            <Grid>
-        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" 
+                           VerticalOptions="Center" HorizontalOptions="Center"/>
         <controls:ListView ItemsSource="{Binding DocList}" 
                      ItemTemplate="{StaticResource docItemTemplate}"
                      SeparatorVisibility="None" HasUnevenRows="true"
-                     BackgroundColor="Transparent" ItemTappedCommand="{Binding DocTappedCommand}">
-
-     
+                     BackgroundColor="White" ItemTappedCommand="{Binding DocTappedCommand}">
             </controls:ListView>
     </Grid>
 </base:BaseContentPage>
