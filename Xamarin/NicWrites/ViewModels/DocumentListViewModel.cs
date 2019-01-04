@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.MobCAT;
+using Microsoft.MobCAT.MVVM;
 using NicWrites.Models;
 using NicWrites.Services;
 using Xamarin.Essentials;
@@ -17,9 +19,11 @@ namespace NicWrites.ViewModels
 
         public Func<Task<List<Document>>> GetData { get; internal set; }
 
-        public List<Document> _docList = new List<Document>();
+        public Command CategoryTappedCommand => new Command<DocumentListViewModel>(async (doc) => await OnDocSelected(doc));
 
-        public List<Document> DocList
+        public ObservableCollection<Document> _docList = new ObservableCollection<Document>();
+
+        public ObservableCollection<Document> DocList
         {
             get => _docList;
             set { RaiseAndUpdate(ref _docList, value); }
@@ -32,7 +36,12 @@ namespace NicWrites.ViewModels
 
             try
             {
-                DocList = await GetData.Invoke();
+                var data = await GetData.Invoke();
+                foreach(var doc in data)
+                {
+
+                    DocList.Add(doc);
+                }
             }
             catch (Exception ex)
             {
@@ -83,6 +92,11 @@ namespace NicWrites.ViewModels
                 */
             
          
+        }
+
+        Task OnDocSelected(DocumentListViewModel user)
+        {
+            return Navigation.PushAsync(user);
         }
     }
 }

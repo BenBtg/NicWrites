@@ -61,7 +61,7 @@
             </DataTemplate>
             <DataTemplate x:Key="docItemTemplate">
                   <ViewCell>
-                        <Label Text="{Binding Path=url}" Style="{StaticResource MenuItemStyle}"/>
+                        <Label Text="{Binding Path=title}" Style="{StaticResource MenuItemStyle}"/>
                     </ViewCell>
             </DataTemplate>
         </ResourceDictionary>

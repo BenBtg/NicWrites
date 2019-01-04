@@ -39,7 +39,7 @@ namespace NicWrites.Services
 
         public Task<List<Document>> GetShortStoriesAsync(bool forceRefresh, CancellationToken cancellationToken)
         {
-            return GetAsync<List<Document>>($"shortstories", cancellationToken);
+            return GetAsync<List<Document>>($"stories", cancellationToken);
         }
 
         Task<List<Document>> INicWritesService.GetScreenplaysAsync(bool forceRefresh, CancellationToken cancellationToken)

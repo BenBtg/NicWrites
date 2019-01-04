@@ -10,12 +10,10 @@
            <Grid>
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
         <controls:ListView ItemsSource="{Binding DocList}" 
-                     ItemTemplate="{StaticResource menuItemTemplate}"
+                     ItemTemplate="{StaticResource docItemTemplate}"
                      SeparatorVisibility="None" HasUnevenRows="true"
-                     BackgroundColor="Transparent" ItemTappedCommand="{Binding CategoryTappedCommand}">
-            <ListView.Header>
-                <Label Text="Nic Writes" Style="{StaticResource TitleStyle}" HeightRequest="50"/>    
-            </ListView.Header>
+                     BackgroundColor="Transparent" ItemTappedCommand="{Binding DocTappedCommand}">
+
      
             </controls:ListView>
     </Grid>

@@ -21,21 +21,15 @@ namespace NicWrites.ViewModels
 
         public ObservableCollection<DocumentListViewModel> Categories { get; set; } = new ObservableCollection<DocumentListViewModel>();
 
-        public Command CategoryTappedCommand
-        {
-            get
-            {
-                return new Command<DocumentListViewModel>(async (user) => await OnCategorySelected(user));
-            }
-        }
-
+        public Command CategoryTappedCommand => new Command<DocumentListViewModel>(async (category) => await OnCategorySelected(category));
+            
         public override async Task InitAsync()
         {
             IsBusy = true;
 
              _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
 
-            await AddCategory("Articles", () => _nicWritesService.GetScreenplaysAsync());
+            await AddCategory("Articles", () => _nicWritesService.GetArticlesAsync());
             await AddCategory("Play Scripts", () => _nicWritesService.GetScriptsAsync());
             await AddCategory("Promotional Copy", () => _nicWritesService.GetPromoCopyAsync());
             await AddCategory("Screenplays", () => _nicWritesService.GetScreenplaysAsync());
