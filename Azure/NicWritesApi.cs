@@ -55,7 +55,7 @@ namespace NicWrites
             ILogger log, ExecutionContext context)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-            var docs = await BlobHelper.GetBlobsFromContainer("scripts",log);
+            var docs = await BlobHelper.GetBlobsFromContainer("playscripts",log);
 
             return docs != null
                 ? (ActionResult)new OkObjectResult(docs)

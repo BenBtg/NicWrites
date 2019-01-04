@@ -31,13 +31,18 @@ namespace NicWrites
                     await blob.GetAccountPropertiesAsync();
                     string title;
                     blob.Metadata.TryGetValue("title", out title);
-                    
+                    if (string.IsNullOrEmpty(title))
+                    {
+                        title = blob.Name;
+                    }
+
                     var story = new Story() { Title = title, Url = blob.Uri};
+                    
                     
                     // Don't download social images
                     if (containerName != "social-blobs")
                     {
-                        story.Content = await blob.DownloadTextAsync();
+                       // story.Content = await blob.DownloadTextAsync();
                     }
 
                     storys.Add(story);
