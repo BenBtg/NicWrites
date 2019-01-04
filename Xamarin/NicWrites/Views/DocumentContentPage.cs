@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace NicWrites.Views
 {
-    public partial class DocumentContentPage : BaseContentPage<ViewModels.DocumentContentViewModel>
+    public class DocumentContentPage : BaseContentPage<ViewModels.DocumentContentViewModel>
     {
         FountainView.FountainContentView _fountainContentView;
         public DocumentContentPage()

@@ -14,6 +14,7 @@ namespace NicWrites.Views
 
             //_fountainContentView = new FountainView.FountainContentView();
             //Content = new Label _fountainContentView;
+
         }
 
         protected override void OnAppearing()

@@ -17,14 +17,39 @@ namespace NicWrites.Services
             Serializer = new Microsoft.MobCAT.Converters.JsonSerializer();
         }
 
-        Task<List<Story>> INicWritesService.GetScreenplaysAsync(bool forceRefresh, CancellationToken cancellationToken)
+        public Task<List<Document>> GetArticlesAsync(bool forceRefresh = false, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetAsync<List<Story>>($"screenplays", cancellationToken);
+            return GetAsync<List<Document>>($"articles", cancellationToken);
         }
 
-        Task<List<Story>> INicWritesService.GetSocialPhotosAsync(bool forceRefresh, CancellationToken cancellationToken)
+        public Task<List<Document>> GetPromoCopyAsync(bool forceRefresh, CancellationToken cancellationToken)
         {
-            return GetAsync<List<Story>>($"social", cancellationToken);
+            return GetAsync<List<Document>>($"promocopy", cancellationToken);
+        }
+
+        public Task<List<Document>> GetReviewsAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Document>>($"reviews", cancellationToken);
+        }
+
+        public Task<List<Document>> GetScriptsAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Document>>($"scripts", cancellationToken);
+        }
+
+        public Task<List<Document>> GetShortStoriesAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Document>>($"shortstories", cancellationToken);
+        }
+
+        Task<List<Document>> INicWritesService.GetScreenplaysAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Document>>($"screenplays", cancellationToken);
+        }
+
+        Task<List<Document>> INicWritesService.GetSocialPhotosAsync(bool forceRefresh, CancellationToken cancellationToken)
+        {
+            return GetAsync<List<Document>>($"socialmedia", cancellationToken);
         }
 
 

@@ -16,7 +16,7 @@ namespace NicWrites
 
             var navigationService = new NavigationService();
             navigationService.RegisterViewModels(typeof(MainPage).GetTypeInfo().Assembly);
-            navigationService.RegisterViewModels(typeof(ScriptContentPage).GetTypeInfo().Assembly);
+            navigationService.RegisterViewModels(typeof(DocumentListPage).GetTypeInfo().Assembly);
             navigationService.RegisterViewModels(typeof(SocialMediaPage).GetTypeInfo().Assembly);
 
             ServiceContainer.Register<INavigationService>(navigationService);

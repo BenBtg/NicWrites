@@ -31,11 +31,6 @@ namespace NicWrites.iOS
                 // Pending registratio nof placeform-specific dependencies
             });
 
-            foreach (var family in UIFont.FamilyNames)
-            {
-                Console.WriteLine(family);
-            }
-
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

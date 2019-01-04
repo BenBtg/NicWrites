@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ShortStories\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ViewModels\NineYear.md" />
@@ -33,6 +34,8 @@
     <Compile Remove="Views\SocialMedia.xaml.cs" />
     <Compile Remove="ViewModels\EmptyClass.cs" />
     <Compile Remove="ViewModels\ItemsViewModel.cs" />
+    <Compile Remove="Models\BlobModels.cs" />
+    <Compile Remove="Views\DocumentContentPage %28copy%29.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MobCAT.Forms\MobCAT.Forms.csproj" />

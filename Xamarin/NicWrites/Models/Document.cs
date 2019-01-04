@@ -1,7 +1,7 @@
 ﻿using System;
 namespace NicWrites.Models
 {
-    public class Story
+    public class Document
     {
         public string title { get; set; }
         public Uri url { get; set; }

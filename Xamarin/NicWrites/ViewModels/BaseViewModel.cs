@@ -13,8 +13,6 @@ namespace NicWrites.ViewModels
 {
     public class BaseNicWritesViewModel : BaseNavigationViewModel
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
-
         string title = string.Empty;
         public string Title
         {

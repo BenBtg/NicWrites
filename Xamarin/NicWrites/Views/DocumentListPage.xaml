@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage  xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="NicWrites.Views.DocumentListPage"
+             xmlns:base="clr-namespace:Microsoft.MobCAT.Forms.Pages;assembly=Microsoft.MobCAT.Forms"
+             xmlns:views="clr-namespace:NicWrites.Views" 
+             xmlns:controls="clr-namespace:NicWrites.Controls"
+             xmlns:vm="clr-namespace:NicWrites.ViewModels" 
+             x:TypeArguments="vm:DocumentListViewModel">
+           <Grid>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+        <controls:ListView ItemsSource="{Binding DocList}" 
+                     ItemTemplate="{StaticResource menuItemTemplate}"
+                     SeparatorVisibility="None" HasUnevenRows="true"
+                     BackgroundColor="Transparent" ItemTappedCommand="{Binding CategoryTappedCommand}">
+            <ListView.Header>
+                <Label Text="Nic Writes" Style="{StaticResource TitleStyle}" HeightRequest="50"/>    
+            </ListView.Header>
+     
+            </controls:ListView>
+    </Grid>
+</base:BaseContentPage>

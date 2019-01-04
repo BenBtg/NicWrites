@@ -1,57 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <base:BaseContentPage  
     xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="NicWrites.Views.MainPage"
-             xmlns:base="clr-namespace:Microsoft.MobCAT.Forms.Pages;assembly=Microsoft.MobCAT.Forms"
-             xmlns:views="clr-namespace:NicWrites.Views" 
-             xmlns:vm="clr-namespace:NicWrites.ViewModels" 
-             x:TypeArguments="vm:MenuViewModel"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="NicWrites.Views.MainPage"
+    xmlns:base="clr-namespace:Microsoft.MobCAT.Forms.Pages;assembly=Microsoft.MobCAT.Forms"
+    xmlns:controls="clr-namespace:NicWrites.Controls"
+    xmlns:views="clr-namespace:NicWrites.Views" 
+    xmlns:vm="clr-namespace:NicWrites.ViewModels" 
+    x:TypeArguments="vm:MenuViewModel"
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
     <base:BaseContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="TitleStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-            </Style>
-            
-            <Style x:Key="MenuItemStyle" TargetType="Button">
-                <Setter Property="FontFamily" Value="{StaticResource Prime}"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-            </Style>
-          </ResourceDictionary>
+           
+            </ResourceDictionary>
     </base:BaseContentPage.Resources>       
     <Grid>
         <Image Source="CoffeeStain.jpg" Margin="60,90,0,0" BackgroundColor="White" Aspect="AspectFit"/>
-        <Grid Margin="50">     
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
             
-            <Label Text="Nic Writes" Style="{StaticResource TitleStyle}"/>
-            <Button Style="{StaticResource MenuItemStyle}" Grid.Row="1" Text="Articles" Command="{Binding ArticlesCommand}"/>
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+           <controls:ListView ItemsSource="{Binding Categories}" 
+                     ItemTemplate="{StaticResource menuItemTemplate}"
+                     SeparatorVisibility="None" HasUnevenRows="true"
+                     BackgroundColor="Transparent" ItemTappedCommand="{Binding CategoryTappedCommand}">
+            <ListView.Header>
+                <Label Text="Nic Writes" Style="{StaticResource TitleStyle}" HeightRequest="50"/>    
+            </ListView.Header>
+     
+            </controls:ListView>
+
+        <!-- <Button Style="{StaticResource MenuItemStyle}" Grid.Row="1" Text="Articles" Command="{Binding ArticlesCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="2" Text="Play Scripts" Command="{Binding PlayScriptsCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="3" Text="Promotional Copy" Command="{Binding PromoCopyCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="4" Text="Screenplays" Command="{Binding ScreenplaysCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="5" Text="Reviews" Command="{Binding ReviewsCommand}"/>
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="6" Text="Short Stories" Command="{Binding StoriesCommand}"/>        
             <Button Style="{StaticResource MenuItemStyle}" Grid.Row="7" Text="Social Media" Command="{Binding SocialCommand}"/>
-        
-        </Grid>
+   
+-->
     </Grid>
 </base:BaseContentPage>
