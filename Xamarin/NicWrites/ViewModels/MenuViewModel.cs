@@ -19,9 +19,9 @@ namespace NicWrites.ViewModels
         //public Command ScriptsCommand => new Command(async () => await Navigation.PushAsync(new DocumentListViewModel("scripts")));
         //public Command ArticlesCommand => new Command(async () => await Navigation.PushAsync(new ScriptContentViewModel()));
 
-        public ObservableCollection<DocumentListViewModel> Categories { get; set; } = new ObservableCollection<DocumentListViewModel>();
+        public ObservableCollection<BaseNavigationViewModel> Categories { get; set; } = new ObservableCollection<BaseNavigationViewModel>();
 
-        public Command CategoryTappedCommand => new Command<DocumentListViewModel>(async (category) => await OnCategorySelected(category));
+        public Command CategoryTappedCommand => new Command<BaseNavigationViewModel>(async (category) => await OnCategorySelected(category));
             
         public override async Task InitAsync()
         {
@@ -35,9 +35,20 @@ namespace NicWrites.ViewModels
             await AddCategory("Screenplays", () => _nicWritesService.GetScreenplaysAsync());
             await AddCategory("Reviews", () => _nicWritesService.GetReviewsAsync());
             await AddCategory("ShortStories", () => _nicWritesService.GetShortStoriesAsync());
-            await AddCategory("Social Media", () => _nicWritesService.GetSocialPhotosAsync());
+            await AddSocialMediaCategory();
 
             IsBusy = false;
+        }
+
+        private async Task AddSocialMediaCategory()
+        {
+            await Task.Delay(500);
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+
+                Categories.Add(new SocialMediaViewModel() { Title = "Social Media" });//, GetData = getDocuments });
+            });
+
         }
 
         private async Task AddCategory(string categoryName, Func<Task<List<Document>>> getDocuments)
@@ -49,7 +60,7 @@ namespace NicWrites.ViewModels
             });
         }
 
-        Task OnCategorySelected(DocumentListViewModel user)
+        Task OnCategorySelected(BaseNavigationViewModel user)
         {
             return Navigation.PushAsync(user);
         }
