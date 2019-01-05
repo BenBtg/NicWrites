@@ -19,11 +19,11 @@ namespace NicWrites.ViewModels
 
         public Func<Task<List<Document>>> GetData { get; internal set; }
 
-        public Command CategoryTappedCommand => new Command<DocumentListViewModel>(async (doc) => await OnDocSelected(doc));
+        public Command DocTappedCommand => new Command<DocumentContentViewModel>(async (doc) => await OnDocSelected(doc));
 
-        public ObservableCollection<Document> _docList = new ObservableCollection<Document>();
+        public ObservableCollection<DocumentContentViewModel> _docList = new ObservableCollection<DocumentContentViewModel>();
 
-        public ObservableCollection<Document> DocList
+        public ObservableCollection<DocumentContentViewModel> DocList
         {
             get => _docList;
             set { RaiseAndUpdate(ref _docList, value); }
@@ -39,8 +39,8 @@ namespace NicWrites.ViewModels
                 var data = await GetData.Invoke();
                 foreach(var doc in data)
                 {
-
-                    DocList.Add(doc);
+                    var docContent = new DocumentContentViewModel() { Document = doc };
+                    DocList.Add(docContent);
                 }
             }
             catch (Exception ex)
@@ -53,32 +53,6 @@ namespace NicWrites.ViewModels
             }
 
           /*  var _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
-            try
-            {
-                IsBusy = true;
-                switch (_docType)
-                {
-                    case DocType.Articles:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                    case DocType.PlayScripts:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                    case DocType.PromoCopy:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                    case DocType.Reviews:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                    case DocType.Screenplays:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                    case DocType.ShortStories:
-                        { docList = await _nicWritesService.GetScreenplaysAsync(); }
-                        break;
-                }
-
-
                 //var sourceText = result[2].content;
 
                 //
@@ -90,13 +64,11 @@ namespace NicWrites.ViewModels
                 //    ;
                 //});
                 */
-            
-         
         }
 
-        Task OnDocSelected(DocumentListViewModel user)
+        Task OnDocSelected(DocumentContentViewModel doc)
         {
-            return Navigation.PushAsync(user);
+            return Navigation.PushAsync(doc);
         }
     }
 }

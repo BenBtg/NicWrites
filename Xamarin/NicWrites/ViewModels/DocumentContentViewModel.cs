@@ -18,38 +18,39 @@ namespace NicWrites.ViewModels
             get;
             set;
         }
-
-        public string WebContent
+        public Document Document { get; set; }
+        public string DocText
         {
             get => _webContent;
             set { RaiseAndUpdate(ref _webContent, value); }
         }
 
-        private INicWritesService _nicWritesService;
+        private INicWritesBlobService _nicWritesService;
 
         string _webContent;
 
         public DocumentContentViewModel()
         {
-            _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
+
         }
 
         public async override Task InitAsync()
         {
-
             try
             {
+                _nicWritesService = ServiceContainer.Resolve<INicWritesBlobService>();
                 IsBusy = true;
-                var result = await _nicWritesService.GetScreenplaysAsync();
-                var sourceText = result[1].content;
+                Title = Document.title;
 
-                Analytics.TrackEvent("ViewScript " + result[1].title);
+                Analytics.TrackEvent("ViewScript " + Document.title);
+
+                var docText = await _nicWritesService.GetDocContentAsync(Document.url.PathAndQuery);
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     // Code to run on the main thread
-                    WebContent = sourceText;
-                    ;
+                    DocText = docText;
+        
                 });
             
             }

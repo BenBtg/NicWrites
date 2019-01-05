@@ -9,10 +9,7 @@
     xmlns:vm="clr-namespace:NicWrites.ViewModels" 
     x:TypeArguments="vm:MenuViewModel"
     BackgroundColor="White"
-    NavigationPage.HasNavigationBar="false">
-    <base:BaseContentPage.Resources>
-
-    </base:BaseContentPage.Resources>       
+    NavigationPage.HasNavigationBar="false">     
     <Grid>
         <Image Source="CoffeeStain.jpg" Margin="60,90,0,0" BackgroundColor="White" Aspect="AspectFit"/>
             
