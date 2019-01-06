@@ -114,11 +114,8 @@
                   ItemTemplate="{StaticResource FountainDataTemplateSelector}"
                   SelectionMode="None" 
                   CachingStrategy="RecycleElement"
+                  ItemSelected="Handle_ItemSelected"
                   >
-            <ListView.Header>
-               <!-- <Label Text="Fountain View"/>-->
-            </ListView.Header>
-         
             </ListView>
     </ContentView.Content>
 </ContentView>

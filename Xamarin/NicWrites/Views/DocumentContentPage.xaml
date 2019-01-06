@@ -7,6 +7,7 @@
              xmlns:controls="clr-namespace:NicWrites.Controls"
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
              x:TypeArguments="vm:DocumentContentViewModel"
-             Title="{Binding Title}">
+             Title="{Binding Title}" xmlns:fountain="clr-namespace:FountainView;assembly=FountainView">
 <Editor Text="{Binding Path=DocText}" FontFamily="{StaticResource Prime}" Margin="10,0,10,0"/>
+    <fountain:FountainContentView Text="{Binding DocText}"/>
 </base:BaseContentPage>
