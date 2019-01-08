@@ -109,13 +109,12 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <ContentView.Content>
-        <ListView x:Name="FountainList" SeparatorVisibility="None" HasUnevenRows="true"
-                  ItemTemplate="{StaticResource FountainDataTemplateSelector}"
-                  SelectionMode="None" 
-                  CachingStrategy="RecycleElement"
-                  ItemSelected="Handle_ItemSelected"
-                  >
-            </ListView>
-    </ContentView.Content>
+    
+    <ListView x:Name="FountainList" SeparatorVisibility="None" HasUnevenRows="true"
+              ItemTemplate="{StaticResource FountainDataTemplateSelector}"
+              SelectionMode="None" 
+              CachingStrategy="RecycleElement"
+              ItemSelected="Handle_ItemSelected"
+              BackgroundColor="White">
+     </ListView>
 </ContentView>
