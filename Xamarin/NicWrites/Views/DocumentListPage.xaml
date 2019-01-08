@@ -15,6 +15,8 @@
                      ItemTemplate="{StaticResource docItemTemplate}"
                      SeparatorVisibility="None" HasUnevenRows="true"
                      BackgroundColor="White" ItemTappedCommand="{Binding DocTappedCommand}">
+            
             </controls:ListView>
+        <Label Text="Content coming soon!" Style="{StaticResource TitleStyle}" IsVisible="{Binding IsEmpty}"/>
     </Grid>
 </base:BaseContentPage>

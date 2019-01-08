@@ -17,6 +17,13 @@ namespace NicWrites.ViewModels
 
         public DocType _docType;
 
+        bool _isEmpty;
+        public bool IsEmpty
+        {
+            get { return _isEmpty; }
+            set { RaiseAndUpdate(ref _isEmpty, value); }
+        }
+
         public Func<Task<List<Document>>> GetData { get; internal set; }
 
         public Command DocTappedCommand => new Command<DocumentContentViewModel>(async (doc) => await OnDocSelected(doc));
@@ -36,6 +43,7 @@ namespace NicWrites.ViewModels
 
             try
             {
+                IsEmpty = DocList.Count == 0;
                 var data = await GetData.Invoke();
                 foreach(var doc in data)
                 {
@@ -50,6 +58,7 @@ namespace NicWrites.ViewModels
             finally
             {
                 IsBusy = false;
+                IsEmpty = DocList.Count == 0;
             }
 
           /*  var _nicWritesService = ServiceContainer.Resolve<INicWritesService>();
