@@ -1,0 +1,3 @@
+[submodule "FountainSharp"]
+	path = FountainSharp
+	url = git@github.com:BenBtg/FountainSharp.git
