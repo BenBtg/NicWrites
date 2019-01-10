@@ -11,28 +11,21 @@ using Microsoft.AppCenter.Analytics;
 
 namespace NicWrites.ViewModels
 {
-    public class DocumentContentViewModel: BaseNicWritesViewModel
-    { 
-        public object ViewModel
-        {
-            get;
-            set;
-        }
+    public class DocumentContentViewModel : BaseNicWritesViewModel
+    {
         public Document Document { get; set; }
-        public string DocText
+        string _fountainDocText;
+        private string _plainDocText;
+
+        public string FountainDocText
         {
-            get => _webContent;
-            set { RaiseAndUpdate(ref _webContent, value); }
+            get => _fountainDocText;
+            set { RaiseAndUpdate(ref _fountainDocText, value); }
         }
+
+        public string PlainDocText { get => _plainDocText; set { RaiseAndUpdate(ref _plainDocText, value); } }
 
         private INicWritesBlobService _nicWritesService;
-
-        string _webContent;
-
-        public DocumentContentViewModel()
-        {
-
-        }
 
         public async override Task InitAsync()
         {
@@ -44,15 +37,23 @@ namespace NicWrites.ViewModels
 
                 Analytics.TrackEvent("ViewScript " + Document.title);
 
+
                 var docText = await _nicWritesService.GetDocContentAsync(Document.url.PathAndQuery);
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    // Code to run on the main thread
-                    DocText = docText;
-        
+                    if (Title.EndsWith("fountain", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        // Code to run on the main thread
+                        FountainDocText = docText;
+                    }
+                    else
+                    {
+                        PlainDocText = docText;
+                    }
+
                 });
-            
+
             }
             catch (Exception ex)
             {
