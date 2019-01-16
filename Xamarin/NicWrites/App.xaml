@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:mdv="clr-namespace:Xam.Forms.Markdown;assembly=Xam.Forms.MarkdownView"
              x:Class="NicWrites.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -52,6 +53,12 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            
+            <Style TargetType="mdv:MarkdownView">
+   <!--             <Setter Property="" Value="{StaticResource Prime}"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="Large"/>-->
             </Style>
             
             <DataTemplate x:Key="menuItemTemplate">

@@ -23,7 +23,11 @@ namespace NicWrites.ViewModels
             set { RaiseAndUpdate(ref _fountainDocText, value); }
         }
 
-        public string PlainDocText { get => _plainDocText; set { RaiseAndUpdate(ref _plainDocText, value); } }
+        public string PlainDocText
+        {
+            get => _plainDocText;
+            set { RaiseAndUpdate(ref _plainDocText, value); }
+        }
 
         private INicWritesBlobService _nicWritesService;
 
@@ -40,12 +44,32 @@ namespace NicWrites.ViewModels
 
                 var docText = await _nicWritesService.GetDocContentAsync(Document.url.PathAndQuery);
 
+
+
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     if (Title.EndsWith("fountain", StringComparison.InvariantCultureIgnoreCase))
                     {
                         // Code to run on the main thread
                         FountainDocText = docText;
+                    }
+                    if (Title.EndsWith("md", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        //Markdown
+                        PlainDocText = docText;
+                        //var doc = Markdig.Markdown.Parse(docText);
+                        //foreach (var item in doc)
+                        //{
+                        //    var para = item as Markdig.Syntax.Block;
+                        //    if (para != null)
+                        //    {
+
+                        //        //foreach (var line in para.Lines)
+                        //        {
+                        //            Console.WriteLine(para.ToString());
+                        //        }
+                        //    }
+                        //}
                     }
                     else
                     {

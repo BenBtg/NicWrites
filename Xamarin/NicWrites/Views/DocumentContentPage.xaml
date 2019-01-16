@@ -7,12 +7,15 @@
              xmlns:controls="clr-namespace:NicWrites.Controls"
              xmlns:vm="clr-namespace:NicWrites.ViewModels" 
              x:TypeArguments="vm:DocumentContentViewModel"
-             Title="{Binding Title}" xmlns:fountain="clr-namespace:FountainView;assembly=FountainView">
+             Title="{Binding Title}" xmlns:fountain="clr-namespace:FountainView;assembly=FountainView" 
+                       xmlns:mdv="clr-namespace:Xam.Forms.Markdown;assembly=Xam.Forms.MarkdownView">
+    
     
     <Grid>
-    <fountain:FountainContentView Text="{Binding FountainDocText}"/>
-    <ScrollView>
-        <Label Text="{Binding Path=PlainDocText}" FontFamily="{StaticResource Prime}" Margin="10,0,10,0" />
-    </ScrollView>
+   <!-- <fountain:FountainContentView Text="{Binding FountainDocText}"/>-->
+        
+    
+     <mdv:MarkdownView x:Name="mdView" Margin="10,0,10,0" />
+    
     </Grid>
 </base:BaseContentPage>
