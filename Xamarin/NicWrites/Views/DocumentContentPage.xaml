@@ -14,8 +14,9 @@
     <Grid>
    <!-- <fountain:FountainContentView Text="{Binding FountainDocText}"/>-->
         
-    
+    <ScrollView>
      <mdv:MarkdownView x:Name="mdView" Margin="10,0,10,0" />
+            </ScrollView>
     
     </Grid>
 </base:BaseContentPage>

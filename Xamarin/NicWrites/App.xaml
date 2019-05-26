@@ -32,7 +32,7 @@
              <Style x:Key="TitleStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource PrimeBold}"/>
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontSize" Value="28"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
